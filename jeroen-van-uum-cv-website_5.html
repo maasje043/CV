@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeroen van Uum — Administratie, communicatie &amp; organisatie</title>
+<meta name="description" content="CV van Jeroen van Uum (Maastricht): allround professional met ervaring in administratie, logistiek, office support, klantcontact, projectorganisatie, communicatie en marketing. Internationale ervaring, Microsoft Office, Adobe Creative Suite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Archivo:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFF1EC;
+  --blue:#2743E3;
+  --pink:#FF4F87;
+  --ink:#17151E;
+  --yellow:#FFD23F;
+  --font-display:'Unbounded',sans-serif;
+  --font-body:'Archivo',sans-serif;
+  --font-mono:'Space Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:var(--pink);color:var(--paper)}
+
+/* ------- scroll progress ------- */
+#progress{
+  position:fixed;top:0;left:0;height:5px;width:0%;
+  background:var(--pink);z-index:1000;
+}
+
+/* ------- nav ------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 2rem;
+  background:color-mix(in srgb, var(--paper) 85%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:2px solid var(--ink);
+}
+nav .logo{font-family:var(--font-mono);font-weight:700;font-size:.95rem;letter-spacing:.05em}
+nav .logo span{color:var(--blue)}
+nav .nav-right{display:flex;align-items:center;gap:1.6rem}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{
+  color:var(--ink);text-decoration:none;font-family:var(--font-mono);
+  font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;
+  padding:.2rem .1rem;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;
+}
+nav a:hover,nav a:focus-visible{border-color:var(--pink);color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+.lang-switch{display:flex;gap:.3rem;align-items:center}
+.lang-switch button{
+  font-family:var(--font-mono);font-size:.75rem;font-weight:700;
+  background:none;border:2px solid transparent;padding:.25rem .45rem;
+  cursor:pointer;color:var(--ink);text-transform:uppercase;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.lang-switch button:hover{border-color:var(--pink)}
+.lang-switch button.active{background:var(--ink);color:var(--paper)}
+
+/* ------- hero ------- */
+header{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+  padding:7rem 2rem 5rem;
+  perspective:900px;
+}
+.hero-shapes{position:absolute;inset:0;pointer-events:none;transform-style:preserve-3d}
+.shape{position:absolute;will-change:transform}
+.shape.circle{
+  width:340px;height:340px;border-radius:50%;
+  background:var(--blue);top:8%;right:5%;
+  mix-blend-mode:multiply;opacity:.9;
+}
+.shape.photo{
+  width:250px;height:250px;border-radius:50%;
+  top:16%;right:12%;overflow:hidden;
+  border:5px solid var(--ink);
+  box-shadow:10px 10px 0 var(--pink);
+  background:#fff;
+}
+.shape.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.shape.ring{
+  width:220px;height:220px;border-radius:50%;
+  border:26px solid var(--pink);bottom:12%;left:4%;
+  mix-blend-mode:multiply;opacity:.85;
+}
+.shape.tri{
+  width:0;height:0;top:60%;right:26%;
+  border-left:70px solid transparent;border-right:70px solid transparent;
+  border-bottom:120px solid var(--yellow);
+  mix-blend-mode:multiply;opacity:.9;
+}
+.shape.grid-dots{
+  top:14%;left:8%;width:180px;height:180px;
+  background-image:radial-gradient(var(--ink) 2.5px, transparent 2.5px);
+  background-size:22px 22px;opacity:.35;
+}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+.hero-eyebrow{
+  font-family:var(--font-mono);font-size:.85rem;letter-spacing:.12em;
+  text-transform:uppercase;display:inline-block;
+  background:var(--ink);color:var(--paper);padding:.35rem .8rem;margin-bottom:1.6rem;
+}
+h1{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2.4rem,8vw,6.4rem);
+  line-height:1.02;letter-spacing:-.01em;text-transform:uppercase;
+}
+h1 .line{display:block;overflow:hidden}
+h1 .line span{display:inline-block;transform:translateY(110%);animation:riseUp .9s cubic-bezier(.2,.9,.25,1) forwards}
+h1 .line:nth-child(2) span{animation-delay:.12s}
+h1 .line:nth-child(3) span{animation-delay:.24s}
+@keyframes riseUp{to{transform:translateY(0)}}
+h1 .outline{
+  color:transparent;
+  -webkit-text-stroke:2.5px var(--ink);
+}
+h1 .accent{color:var(--blue)}
+.hero-sub{
+  margin-top:1.8rem;max-width:520px;font-size:1.15rem;
+  opacity:0;animation:fadeIn .8s ease .6s forwards;
+}
+@keyframes fadeIn{to{opacity:1}}
+.hero-cta{
+  margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;
+  opacity:0;animation:fadeIn .8s ease .8s forwards;
+}
+.btn{
+  font-family:var(--font-mono);font-weight:700;font-size:.9rem;
+  text-transform:uppercase;letter-spacing:.06em;text-decoration:none;
+  padding:.9rem 1.6rem;border:3px solid var(--ink);color:var(--ink);
+  background:var(--paper);position:relative;
+  box-shadow:6px 6px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s,background .15s;
+  display:inline-block;
+}
+.btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.primary{background:var(--pink);color:var(--ink)}
+.btn.primary:hover{background:var(--yellow)}
+
+/* ------- marquee ------- */
+.marquee{
+  border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);
+  background:var(--blue);color:var(--paper);
+  overflow:hidden;white-space:nowrap;padding:.8rem 0;
+}
+.marquee-track{display:inline-block;animation:scrollX 22s linear infinite}
+.marquee span{
+  font-family:var(--font-display);font-weight:600;font-size:1.05rem;
+  text-transform:uppercase;margin-right:3rem;
+}
+.marquee span::after{content:"✳";margin-left:3rem;color:var(--yellow)}
+@keyframes scrollX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ------- sections ------- */
+section{padding:6.5rem 2rem;max-width:1200px;margin:0 auto}
+.section-label{
+  font-family:var(--font-mono);font-size:.85rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:.8rem;
+}
+h2{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(1.9rem,4.5vw,3.2rem);text-transform:uppercase;
+  margin-bottom:2.6rem;line-height:1.1;
+}
+h2 mark{background:var(--yellow);padding:0 .2em}
+h3.sub{
+  font-family:var(--font-display);font-size:1rem;text-transform:uppercase;
+  margin:2.6rem 0 1.2rem;
+}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.25,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ------- over mij ------- */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem;align-items:start}
+.about-text p+p{margin-top:1.1rem}
+.about-card{
+  border:3px solid var(--ink);background:#fff;
+  box-shadow:10px 10px 0 var(--blue);padding:1.8rem;
+}
+.about-card h3{font-family:var(--font-display);font-size:1rem;text-transform:uppercase;margin-bottom:1rem}
+.about-card ul{list-style:none}
+.about-card li{
+  font-family:var(--font-mono);font-size:.85rem;padding:.55rem 0;
+  border-bottom:1.5px dashed var(--ink);display:flex;justify-content:space-between;gap:1rem;
+}
+.about-card li:last-child{border-bottom:none}
+.about-card li b{color:var(--blue);text-align:right}
+
+/* ------- skills ------- */
+.skills-cloud{display:flex;flex-wrap:wrap;gap:.9rem}
+.skill{
+  font-family:var(--font-mono);font-weight:700;font-size:.95rem;
+  border:2.5px solid var(--ink);padding:.6rem 1.1rem;background:#fff;
+  transition:transform .18s,background .18s;cursor:default;will-change:transform;
+}
+.skill:nth-child(3n){background:var(--yellow)}
+.skill:nth-child(4n){background:var(--pink);color:var(--paper)}
+.skill:hover{transform:rotate(-3deg) scale(1.08);background:var(--blue);color:var(--paper)}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.lang{
+  border:3px solid var(--ink);background:#fff;padding:1rem 1.2rem;
+  box-shadow:5px 5px 0 var(--ink);
+}
+.lang b{font-family:var(--font-display);font-size:.85rem;text-transform:uppercase;display:block}
+.lang span{font-family:var(--font-mono);font-size:.8rem;color:var(--blue);font-weight:700}
+
+/* ------- tijdlijn (signature) ------- */
+#ervaring{position:relative}
+.timeline{position:relative;margin-top:1rem}
+.timeline::before{
+  content:"";position:absolute;left:18px;top:0;bottom:0;width:4px;
+  background:repeating-linear-gradient(to bottom,var(--ink) 0 8px,transparent 8px 16px);
+  opacity:.25;
+}
+.timeline-fill{
+  position:absolute;left:18px;top:0;width:4px;height:0%;
+  background:var(--pink);z-index:1;transition:height .1s linear;
+}
+.tl-item{position:relative;padding:0 0 3rem 64px}
+.tl-dot{
+  position:absolute;left:6px;top:6px;width:28px;height:28px;border-radius:50%;
+  background:var(--paper);border:4px solid var(--ink);z-index:2;
+  transition:background .3s,transform .3s;
+}
+.tl-item.visible .tl-dot{background:var(--blue);transform:scale(1.15)}
+.tl-date{font-family:var(--font-mono);font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--blue);text-transform:uppercase}
+.tl-card{
+  margin-top:.5rem;border:3px solid var(--ink);background:#fff;
+  box-shadow:7px 7px 0 var(--ink);overflow:hidden;
+  transition:box-shadow .2s,transform .2s;
+}
+.tl-card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--pink)}
+.tl-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem 1.4rem;gap:1rem;width:100%;background:none;border:none;
+  font:inherit;text-align:left;cursor:pointer;color:inherit;
+}
+.tl-head h3{font-family:var(--font-display);font-size:1.05rem;text-transform:uppercase;line-height:1.25}
+.tl-head .org{font-family:var(--font-mono);font-size:.82rem;color:var(--pink);font-weight:700;margin-top:.2rem;display:block}
+.tl-toggle{
+  flex:none;width:38px;height:38px;border:3px solid var(--ink);
+  font-family:var(--font-mono);font-weight:700;font-size:1.2rem;line-height:1;
+  display:grid;place-items:center;background:var(--yellow);
+  transition:transform .3s,background .3s;
+}
+.tl-card.open .tl-toggle{transform:rotate(45deg);background:var(--pink);color:var(--paper)}
+.tl-body{
+  max-height:0;transition:max-height .45s cubic-bezier(.2,.8,.25,1);
+}
+.tl-body-inner{padding:0 1.4rem 1.4rem;border-top:2px dashed var(--ink)}
+.tl-body-inner p{padding-top:1rem;font-size:.98rem}
+.tl-body-inner ul{margin-top:.7rem;padding-left:1.2rem;font-size:.95rem}
+.tl-body-inner li{margin:.3rem 0}
+
+/* ------- prestaties ------- */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2rem}
+.project{
+  border:3px solid var(--ink);background:#fff;
+  transition:transform .12s ease-out;transform-style:preserve-3d;will-change:transform;
+}
+.project-thumb{
+  height:170px;border-bottom:3px solid var(--ink);
+  display:grid;place-items:center;overflow:hidden;position:relative;
+}
+.project:nth-child(1) .project-thumb{background:repeating-linear-gradient(45deg,var(--pink) 0 18px,var(--paper) 18px 36px)}
+.project:nth-child(2) .project-thumb{background:radial-gradient(circle at 30% 30%,var(--blue) 0 24%,transparent 24%),radial-gradient(circle at 70% 60%,var(--yellow) 0 30%,transparent 30%),var(--paper)}
+.project:nth-child(3) .project-thumb{background:conic-gradient(var(--yellow) 0 25%,var(--blue) 0 50%,var(--pink) 0 75%,var(--ink) 0)}
+.project-thumb span{
+  font-family:var(--font-display);font-weight:800;font-size:1.4rem;
+  background:var(--paper);border:3px solid var(--ink);padding:.25em .5em;
+  transform:rotate(-4deg);text-transform:uppercase;
+}
+.project-info{padding:1.4rem}
+.project-info h3{font-family:var(--font-display);font-size:1rem;text-transform:uppercase;margin-bottom:.5rem}
+.project-info p{font-size:.95rem}
+.project-tags{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.project-tags span{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;
+  border:2px solid var(--ink);padding:.2rem .55rem;background:var(--paper);
+}
+
+/* ------- contact ------- */
+#contact{text-align:center}
+#contact .big-cta{
+  font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.7rem,5.5vw,4rem);line-height:1.1;margin-bottom:2rem;
+}
+#contact .big-cta a{
+  color:var(--blue);text-decoration:none;position:relative;
+  display:inline-block;white-space:nowrap;
+  font-size:clamp(.85rem,3.9vw,2.6rem);
+}
+#contact .big-cta a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.05em;height:.18em;
+  background:var(--pink);z-index:-1;transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.2,.8,.25,1);
+}
+#contact .big-cta a:hover::after,#contact .big-cta a:focus-visible::after{transform:scaleX(1)}
+.socials{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+footer{
+  border-top:3px solid var(--ink);padding:1.6rem 2rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:.8rem;
+}
+footer .dot{color:var(--pink)}
+footer a{color:var(--ink)}
+
+/* ------- responsive ------- */
+@media (max-width:820px){
+  nav ul{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .shape.circle{width:200px;height:200px;top:4%;right:-6%}
+  .shape.photo{width:150px;height:150px;top:7%;right:6%;box-shadow:6px 6px 0 var(--pink)}
+  .shape.tri{display:none}
+  section{padding:4.5rem 1.4rem}
+  header{padding:7.5rem 1.4rem 4rem}
+}
+
+/* ------- reduced motion ------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  h1 .line span{transform:none;animation:none}
+  .hero-sub,.hero-cta{opacity:1;animation:none}
+  .reveal{opacity:1;transform:none}
+  .marquee-track{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<nav>
+  <div class="logo">JVU<span>_</span>PORTFOLIO</div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#over" data-i18n="nav_over">Over</a></li>
+      <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#ervaring" data-i18n="nav_erv">Ervaring</a></li>
+      <li><a href="#prestaties" data-i18n="nav_prest">Prestaties</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="lang-switch" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="nl" class="active">NL</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="zh">中文</button>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-shapes" id="heroShapes">
+    <div class="shape circle" data-depth="0.3" aria-hidden="true"></div>
+    <div class="shape photo" data-depth="0.45"><img src="data:image/jpeg;base64,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" alt="Portretfoto van Jeroen van Uum"></div>
+    <div class="shape ring" data-depth="0.6" aria-hidden="true"></div>
+    <div class="shape tri" data-depth="0.9" aria-hidden="true"></div>
+    <div class="shape grid-dots" data-depth="0.2" aria-hidden="true"></div>
+  </div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow" data-i18n="eyebrow">Beschikbaar voor een nieuwe uitdaging</span>
+    <h1 data-i18n-html="hero_title">
+      <span class="line"><span>Jeroen</span></span>
+      <span class="line"><span class="outline">van Uum</span></span>
+      <span class="line"><span>regelt <span class="accent">het</span></span></span>
+    </h1>
+    <p class="hero-sub" data-i18n="hero_sub">Allround professional met ervaring in administratie, logistiek, klantcontact, projectorganisatie, communicatie en marketing. Ik houd overzicht, plan vooruit en zorg dat afspraken worden nagekomen — met een creatieve blik als dat nodig is.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#ervaring" data-i18n="cta1">Bekijk mijn ervaring</a>
+      <a class="btn" href="#contact" data-i18n="cta2">Neem contact op</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" data-i18n-html="marquee"></div>
+</div>
+
+<section id="over">
+  <p class="section-label reveal" data-i18n="over_label">// Over mij</p>
+  <h2 class="reveal" data-i18n-html="over_h2">Hoi, ik ben <mark>Jeroen</mark></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p data-i18n="about_p1"></p>
+      <p data-i18n="about_p2"></p>
+      <p data-i18n="about_p3"></p>
+    </div>
+    <aside class="about-card reveal">
+      <h3 data-i18n="card_title">In het kort</h3>
+      <ul data-i18n-html="card_list"></ul>
+    </aside>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="section-label reveal">// Toolbox</p>
+  <h2 class="reveal" data-i18n-html="skills_h2">Waar ik <mark>goed</mark> in ben</h2>
+
+  <h3 class="sub reveal" style="margin-top:0" data-i18n="cat_org">Organisatie</h3>
+  <div class="skills-cloud reveal" data-i18n-html="cloud_org"></div>
+
+  <h3 class="sub reveal" data-i18n="cat_comm">Communicatie</h3>
+  <div class="skills-cloud reveal" data-i18n-html="cloud_comm"></div>
+
+  <h3 class="sub reveal" data-i18n="cat_soft">Software</h3>
+  <div class="skills-cloud reveal" data-i18n-html="cloud_soft"></div>
+
+  <h3 class="sub reveal" data-i18n="cat_pers">Persoonlijke kwaliteiten</h3>
+  <div class="skills-cloud reveal" data-i18n-html="cloud_pers"></div>
+
+  <h3 class="sub reveal" data-i18n="cat_talen">Talen</h3>
+  <div class="lang-grid reveal" data-i18n-html="lang_grid"></div>
+
+  <h3 class="sub reveal" data-i18n="cat_cert">Certificaten</h3>
+  <div class="skills-cloud reveal" data-i18n-html="cloud_cert"></div>
+</section>
+
+<section id="ervaring">
+  <p class="section-label reveal" data-i18n="erv_label">// Werkervaring &amp; opleiding</p>
+  <h2 class="reveal" data-i18n-html="erv_h2">Mijn <mark>route</mark> tot nu toe</h2>
+  <div class="timeline" id="timeline">
+    <div class="timeline-fill" id="timelineFill" aria-hidden="true"></div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl1_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl1_title"></h3><span class="org" data-i18n="tl1_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl1_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl2_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl2_title"></h3><span class="org" data-i18n="tl2_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl2_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl3_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl3_title"></h3><span class="org" data-i18n="tl3_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl3_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl4_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl4_title"></h3><span class="org" data-i18n="tl4_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl4_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl5_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl5_title"></h3><span class="org" data-i18n="tl5_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl5_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl6_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl6_title"></h3><span class="org" data-i18n="tl6_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl6_body"></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot" aria-hidden="true"></div>
+      <p class="tl-date" data-i18n="tl7_date"></p>
+      <div class="tl-card">
+        <button class="tl-head" aria-expanded="false">
+          <span><h3 data-i18n="tl7_title"></h3><span class="org" data-i18n="tl7_org"></span></span>
+          <span class="tl-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="tl-body"><div class="tl-body-inner" data-i18n-html="tl7_body"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="prestaties">
+  <p class="section-label reveal" data-i18n="prest_label">// Belangrijkste prestaties</p>
+  <h2 class="reveal" data-i18n-html="prest_h2">Wat ik heb <mark>bereikt</mark></h2>
+  <div class="projects">
+    <article class="project reveal" data-tilt>
+      <div class="project-thumb"><span data-i18n-html="p1_thumb"></span></div>
+      <div class="project-info">
+        <h3 data-i18n="p1_title"></h3>
+        <p data-i18n="p1_text"></p>
+        <div class="project-tags" data-i18n-html="p1_tags"></div>
+      </div>
+    </article>
+    <article class="project reveal" data-tilt>
+      <div class="project-thumb"><span data-i18n-html="p2_thumb"></span></div>
+      <div class="project-info">
+        <h3 data-i18n="p2_title"></h3>
+        <p data-i18n="p2_text"></p>
+        <div class="project-tags" data-i18n-html="p2_tags"></div>
+      </div>
+    </article>
+    <article class="project reveal" data-tilt>
+      <div class="project-thumb"><span data-i18n-html="p3_thumb"></span></div>
+      <div class="project-info">
+        <h3 data-i18n="p3_title"></h3>
+        <p data-i18n="p3_text"></p>
+        <div class="project-tags" data-i18n-html="p3_tags"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label reveal" data-i18n="contact_label">// Contact</p>
+  <p class="big-cta reveal" data-i18n-html="big_cta">Zullen we<br>kennismaken?<br><a href="mailto:jeroenvanuum@gmail.com">jeroenvanuum@gmail.com</a></p>
+  <div class="socials reveal">
+    <a class="btn" href="tel:+31630403424" data-i18n="btn_call">Bel 06-30 40 34 24</a>
+    <a class="btn primary" href="mailto:jeroenvanuum@gmail.com" data-i18n="btn_mail">Stuur een mail</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Jeroen van Uum <span class="dot">●</span> Maastricht</span>
+  <a href="#top" data-i18n="footer_top">↑ Terug naar boven</a>
+</footer>
+
+<script>
+/* ================= vertalingen ================= */
+const T = {
+nav_over:{nl:"Over",en:"About",de:"Über mich",zh:"关于我"},
+nav_skills:{nl:"Skills",en:"Skills",de:"Skills",zh:"技能"},
+nav_erv:{nl:"Ervaring",en:"Experience",de:"Erfahrung",zh:"经历"},
+nav_prest:{nl:"Prestaties",en:"Highlights",de:"Erfolge",zh:"成就"},
+nav_contact:{nl:"Contact",en:"Contact",de:"Kontakt",zh:"联系"},
+doc_title:{
+ nl:"Jeroen van Uum — Administratie, communicatie & organisatie",
+ en:"Jeroen van Uum — Administration, communication & organisation",
+ de:"Jeroen van Uum — Administration, Kommunikation & Organisation",
+ zh:"Jeroen van Uum — 行政管理、沟通与组织协调"},
+eyebrow:{
+ nl:"Beschikbaar voor een nieuwe uitdaging",
+ en:"Available for a new challenge",
+ de:"Offen für eine neue Herausforderung",
+ zh:"期待新的职业挑战"},
+hero_title:{
+ nl:`<span class="line"><span>Jeroen</span></span><span class="line"><span class="outline">van Uum</span></span><span class="line"><span>regelt <span class="accent">het</span></span></span>`,
+ en:`<span class="line"><span>Jeroen</span></span><span class="line"><span class="outline">van Uum</span></span><span class="line"><span>gets it <span class="accent">done</span></span></span>`,
+ de:`<span class="line"><span>Jeroen</span></span><span class="line"><span class="outline">van Uum</span></span><span class="line"><span>regelt <span class="accent">das</span></span></span>`,
+ zh:`<span class="line"><span>Jeroen</span></span><span class="line"><span class="outline">van Uum</span></span><span class="line"><span>帮您<span class="accent">搞定</span></span></span>`},
+hero_sub:{
+ nl:"Allround professional met ervaring in administratie, logistiek, klantcontact, projectorganisatie, communicatie en marketing. Ik houd overzicht, plan vooruit en zorg dat afspraken worden nagekomen — met een creatieve blik als dat nodig is.",
+ en:"All-round professional with experience in administration, logistics, customer contact, project organisation, communication and marketing. I keep the overview, plan ahead and make sure agreements are kept — with a creative eye when needed.",
+ de:"Vielseitiger Profi mit Erfahrung in Administration, Logistik, Kundenkontakt, Projektorganisation, Kommunikation und Marketing. Ich behalte den Überblick, plane voraus und sorge dafür, dass Absprachen eingehalten werden – mit kreativem Blick, wenn nötig.",
+ zh:"全能型专业人士，在行政管理、物流、客户联络、项目组织、沟通和市场营销方面拥有丰富经验。我统筹全局、提前规划，确保每项约定落实到位——需要时还能提供创意视角。"},
+cta1:{nl:"Bekijk mijn ervaring",en:"View my experience",de:"Meine Erfahrung ansehen",zh:"查看我的经历"},
+cta2:{nl:"Neem contact op",en:"Get in touch",de:"Kontakt aufnehmen",zh:"联系我"},
+marquee:{
+ nl:"<span>Administratie</span><span>Organisatie</span><span>Klantcontact</span><span>Communicatie</span><span>Logistiek</span><span>Marketing</span><span>Administratie</span><span>Organisatie</span><span>Klantcontact</span><span>Communicatie</span><span>Logistiek</span><span>Marketing</span>",
+ en:"<span>Administration</span><span>Organisation</span><span>Customer contact</span><span>Communication</span><span>Logistics</span><span>Marketing</span><span>Administration</span><span>Organisation</span><span>Customer contact</span><span>Communication</span><span>Logistics</span><span>Marketing</span>",
+ de:"<span>Administration</span><span>Organisation</span><span>Kundenkontakt</span><span>Kommunikation</span><span>Logistik</span><span>Marketing</span><span>Administration</span><span>Organisation</span><span>Kundenkontakt</span><span>Kommunikation</span><span>Logistik</span><span>Marketing</span>",
+ zh:"<span>行政管理</span><span>组织协调</span><span>客户联络</span><span>沟通</span><span>物流</span><span>市场营销</span><span>行政管理</span><span>组织协调</span><span>客户联络</span><span>沟通</span><span>物流</span><span>市场营销</span>"},
+over_label:{nl:"// Over mij",en:"// About me",de:"// Über mich",zh:"// 关于我"},
+over_h2:{
+ nl:"Hoi, ik ben <mark>Jeroen</mark>",
+ en:"Hi, I'm <mark>Jeroen</mark>",
+ de:"Hallo, ich bin <mark>Jeroen</mark>",
+ zh:"你好，我是<mark>Jeroen</mark>"},
+about_p1:{
+ nl:"Ik krijg energie van organiseren. Van een planning die klopt, een administratie die op orde is en een klant die precies krijgt wat er is afgesproken. De rode draad in mijn loopbaan: ik ben degene die het overzicht houdt en zorgt dat het gebeurt.",
+ en:"Organising gives me energy. A schedule that works, records that are in order and a client who gets exactly what was agreed. The common thread in my career: I'm the one who keeps the overview and makes sure things get done.",
+ de:"Organisieren gibt mir Energie. Eine Planung, die stimmt, eine Verwaltung, die in Ordnung ist, und ein Kunde, der genau das bekommt, was vereinbart wurde. Der rote Faden in meinem Werdegang: Ich bin derjenige, der den Überblick behält und dafür sorgt, dass es passiert.",
+ zh:"组织协调让我充满活力：合理的计划、井井有条的行政事务、客户准确得到约定的成果。我职业生涯的主线是——我就是那个统筹全局、确保事情落实的人。"},
+about_p2:{
+ nl:"Die ervaring deed ik op in uiteenlopende omgevingen: administratieve en logistieke ondersteuning bij SABIC, klantcontact en werkvoorbereiding bij een reclamebedrijf, marketing en communicatie bij een internationale producent — en zeven maanden werken in Beijing. Daarnaast run ik mijn eigen onderneming MaasjeMurals, waarmee ik workshops en creatieve projecten organiseer voor scholen, bedrijven en gemeenten. Van acquisitie en offerte tot planning en oplevering: ik doe het zelf.",
+ en:"I gained that experience in very different settings: administrative and logistics support at SABIC, customer contact and work preparation at a signage and print company, marketing and communication at an international manufacturer — and seven months working in Beijing. I also run my own business, MaasjeMurals, organising workshops and creative projects for schools, companies and municipalities. From acquisition and quotation to planning and delivery: I handle it all myself.",
+ de:"Diese Erfahrung habe ich in ganz unterschiedlichen Umgebungen gesammelt: administrative und logistische Unterstützung bei SABIC, Kundenkontakt und Arbeitsvorbereitung bei einem Werbeunternehmen, Marketing und Kommunikation bei einem internationalen Hersteller – und sieben Monate Arbeit in Peking. Außerdem führe ich mein eigenes Unternehmen MaasjeMurals, mit dem ich Workshops und kreative Projekte für Schulen, Unternehmen und Gemeinden organisiere. Von der Akquise über das Angebot bis zu Planung und Lieferung: alles aus einer Hand.",
+ zh:"这些经验来自多种不同的工作环境：在SABIC提供行政与物流支持，在广告公司负责客户联络与生产准备，在国际制造企业从事市场营销与沟通工作——还曾在北京工作七个月。此外，我经营自己的公司MaasjeMurals，为学校、企业和市政机构组织工作坊和创意项目。从获客、报价到计划和交付，全程亲力亲为。"},
+about_p3:{
+ nl:"Ik werk nauwkeurig, schakel snel en pak zaken praktisch aan. Nieuwe systemen en taken maak ik me snel eigen, en het liefst werk ik met mensen — of dat nu collega's zijn, klanten of een groep die ik mag enthousiasmeren.",
+ en:"I work accurately, switch gears quickly and take a practical approach. I pick up new systems and tasks fast, and I'm at my best working with people — colleagues, clients or a group I get to inspire.",
+ de:"Ich arbeite genau, schalte schnell um und packe die Dinge praktisch an. Neue Systeme und Aufgaben mache ich mir schnell zu eigen, und am liebsten arbeite ich mit Menschen – ob Kollegen, Kunden oder eine Gruppe, die ich begeistern darf.",
+ zh:"我工作严谨、反应迅速、注重实效，能快速掌握新系统和新任务。我最喜欢与人打交道——无论是同事、客户，还是由我带动气氛的团队。"},
+card_title:{nl:"In het kort",en:"At a glance",de:"Auf einen Blick",zh:"简要信息"},
+card_list:{
+ nl:`<li>Locatie <b>Maastricht</b></li><li>Inzetbaar in <b>Administratie t/m marketing</b></li><li>Opleiding <b>BA Int. Communication</b></li><li>Eigen bedrijf <b>MaasjeMurals</b></li><li>Status <b>Open voor werk</b></li>`,
+ en:`<li>Location <b>Maastricht, NL</b></li><li>Fields <b>Administration to marketing</b></li><li>Education <b>BA Int. Communication</b></li><li>Own business <b>MaasjeMurals</b></li><li>Status <b>Open to work</b></li>`,
+ de:`<li>Standort <b>Maastricht, NL</b></li><li>Einsetzbar in <b>Administration bis Marketing</b></li><li>Ausbildung <b>BA Int. Communication</b></li><li>Eigenes Unternehmen <b>MaasjeMurals</b></li><li>Status <b>Offen für Angebote</b></li>`,
+ zh:`<li>所在地 <b>荷兰马斯特里赫特</b></li><li>适用领域 <b>行政管理至市场营销</b></li><li>学历 <b>国际传播学士</b></li><li>自营公司 <b>MaasjeMurals</b></li><li>状态 <b>求职中</b></li>`},
+skills_h2:{
+ nl:"Waar ik <mark>goed</mark> in ben",
+ en:"What I'm <mark>good</mark> at",
+ de:"Was ich <mark>gut</mark> kann",
+ zh:"我的<mark>专长</mark>"},
+cat_org:{nl:"Organisatie",en:"Organisation",de:"Organisation",zh:"组织协调"},
+cat_comm:{nl:"Communicatie",en:"Communication",de:"Kommunikation",zh:"沟通"},
+cat_soft:{nl:"Software",en:"Software",de:"Software",zh:"软件"},
+cat_pers:{nl:"Persoonlijke kwaliteiten",en:"Personal qualities",de:"Persönliche Stärken",zh:"个人素质"},
+cat_talen:{nl:"Talen",en:"Languages",de:"Sprachen",zh:"语言"},
+cat_cert:{nl:"Certificaten",en:"Certificates",de:"Zertifikate",zh:"证书"},
+cloud_org:{
+ nl:`<span class="skill">Administratie</span><span class="skill">Planning</span><span class="skill">Projectorganisatie</span><span class="skill">Logistieke ondersteuning</span><span class="skill">Werkvoorbereiding</span><span class="skill">Evenementen</span>`,
+ en:`<span class="skill">Administration</span><span class="skill">Planning</span><span class="skill">Project organisation</span><span class="skill">Logistics support</span><span class="skill">Work preparation</span><span class="skill">Events</span>`,
+ de:`<span class="skill">Administration</span><span class="skill">Planung</span><span class="skill">Projektorganisation</span><span class="skill">Logistische Unterstützung</span><span class="skill">Arbeitsvorbereitung</span><span class="skill">Events</span>`,
+ zh:`<span class="skill">行政管理</span><span class="skill">计划安排</span><span class="skill">项目组织</span><span class="skill">物流支持</span><span class="skill">生产准备</span><span class="skill">活动策划</span>`},
+cloud_comm:{
+ nl:`<span class="skill">Klantcontact</span><span class="skill">Presenteren</span><span class="skill">Storytelling</span><span class="skill">Contentcreatie</span><span class="skill">Social media</span>`,
+ en:`<span class="skill">Customer contact</span><span class="skill">Presenting</span><span class="skill">Storytelling</span><span class="skill">Content creation</span><span class="skill">Social media</span>`,
+ de:`<span class="skill">Kundenkontakt</span><span class="skill">Präsentieren</span><span class="skill">Storytelling</span><span class="skill">Content-Erstellung</span><span class="skill">Social Media</span>`,
+ zh:`<span class="skill">客户联络</span><span class="skill">演讲展示</span><span class="skill">故事叙述</span><span class="skill">内容创作</span><span class="skill">社交媒体</span>`},
+cloud_soft:{
+ nl:`<span class="skill">Microsoft Office 365</span><span class="skill">Excel</span><span class="skill">Adobe Illustrator</span><span class="skill">Adobe Photoshop</span><span class="skill">Adobe InDesign</span><span class="skill">HTML &amp; CSS (basis)</span>`,
+ en:`<span class="skill">Microsoft Office 365</span><span class="skill">Excel</span><span class="skill">Adobe Illustrator</span><span class="skill">Adobe Photoshop</span><span class="skill">Adobe InDesign</span><span class="skill">HTML &amp; CSS (basics)</span>`,
+ de:`<span class="skill">Microsoft Office 365</span><span class="skill">Excel</span><span class="skill">Adobe Illustrator</span><span class="skill">Adobe Photoshop</span><span class="skill">Adobe InDesign</span><span class="skill">HTML &amp; CSS (Grundlagen)</span>`,
+ zh:`<span class="skill">Microsoft Office 365</span><span class="skill">Excel</span><span class="skill">Adobe Illustrator</span><span class="skill">Adobe Photoshop</span><span class="skill">Adobe InDesign</span><span class="skill">HTML &amp; CSS（基础）</span>`},
+cloud_pers:{
+ nl:`<span class="skill">Proactief</span><span class="skill">Nauwkeurig</span><span class="skill">Zelfstandig</span><span class="skill">Stressbestendig</span><span class="skill">Teamspeler</span><span class="skill">Creatief</span>`,
+ en:`<span class="skill">Proactive</span><span class="skill">Accurate</span><span class="skill">Independent</span><span class="skill">Stress-resistant</span><span class="skill">Team player</span><span class="skill">Creative</span>`,
+ de:`<span class="skill">Proaktiv</span><span class="skill">Genau</span><span class="skill">Selbstständig</span><span class="skill">Stressresistent</span><span class="skill">Teamplayer</span><span class="skill">Kreativ</span>`,
+ zh:`<span class="skill">积极主动</span><span class="skill">严谨细致</span><span class="skill">独立自主</span><span class="skill">抗压能力强</span><span class="skill">团队合作</span><span class="skill">富有创意</span>`},
+lang_grid:{
+ nl:`<div class="lang"><b>Nederlands</b><span>Moedertaal</span></div><div class="lang"><b>Engels</b><span>Vloeiend</span></div><div class="lang"><b>Duits</b><span>Goed</span></div><div class="lang"><b>Mandarijn Chinees</b><span>HSK4</span></div>`,
+ en:`<div class="lang"><b>Dutch</b><span>Native</span></div><div class="lang"><b>English</b><span>Fluent</span></div><div class="lang"><b>German</b><span>Good</span></div><div class="lang"><b>Mandarin Chinese</b><span>HSK4</span></div>`,
+ de:`<div class="lang"><b>Niederländisch</b><span>Muttersprache</span></div><div class="lang"><b>Englisch</b><span>Fließend</span></div><div class="lang"><b>Deutsch</b><span>Gut</span></div><div class="lang"><b>Mandarin</b><span>HSK4</span></div>`,
+ zh:`<div class="lang"><b>荷兰语</b><span>母语</span></div><div class="lang"><b>英语</b><span>流利</span></div><div class="lang"><b>德语</b><span>良好</span></div><div class="lang"><b>中文（普通话）</b><span>HSK4</span></div>`},
+cloud_cert:{
+ nl:`<span class="skill">TEFL Certificate</span><span class="skill">HSK4 Chinees</span><span class="skill">Excel Essentials — XelPlus Academy</span><span class="skill">NSL Snowboard Instructor Level 1 &amp; 2</span><span class="skill">Anwärter Snowboard Instructor</span>`,
+ en:`<span class="skill">TEFL Certificate</span><span class="skill">HSK4 Chinese</span><span class="skill">Excel Essentials — XelPlus Academy</span><span class="skill">NSL Snowboard Instructor Level 1 &amp; 2</span><span class="skill">Anwärter Snowboard Instructor</span>`,
+ de:`<span class="skill">TEFL Certificate</span><span class="skill">HSK4 Chinesisch</span><span class="skill">Excel Essentials — XelPlus Academy</span><span class="skill">NSL Snowboard Instructor Level 1 &amp; 2</span><span class="skill">Anwärter Snowboard Instructor</span>`,
+ zh:`<span class="skill">TEFL国际英语教师资格证</span><span class="skill">HSK4中文水平证书</span><span class="skill">Excel Essentials — XelPlus Academy</span><span class="skill">NSL单板滑雪教练1级和2级</span><span class="skill">Anwärter单板滑雪教练</span>`},
+erv_label:{nl:"// Werkervaring & opleiding",en:"// Work experience & education",de:"// Berufserfahrung & Ausbildung",zh:"// 工作经历与教育背景"},
+erv_h2:{
+ nl:"Mijn <mark>route</mark> tot nu toe",
+ en:"My <mark>journey</mark> so far",
+ de:"Mein <mark>Weg</mark> bis heute",
+ zh:"我的<mark>职业之路</mark>"},
+tl1_date:{nl:"2026 — Heden",en:"2026 — Present",de:"2026 — Heute",zh:"2026年 — 至今"},
+tl1_title:{nl:"Administrative & Logistics Support",en:"Administrative & Logistics Support",de:"Administrative & Logistics Support",zh:"行政与物流支持"},
+tl1_org:{nl:"SABIC",en:"SABIC",de:"SABIC",zh:"SABIC（沙特基础工业公司）"},
+tl1_body:{
+ nl:`<p>Administratieve en logistieke ondersteuning binnen een internationale werkomgeving, waar nauwkeurigheid en het volgen van procedures voorop staan.</p><ul><li>Verwerken en beheren van documentatie volgens vaste procedures</li><li>Plannen en coördineren van logistieke processen</li><li>Dagelijks schakelen en samenwerken met verschillende afdelingen</li><li>Nauwkeurig en gestructureerd werken in een omgeving waar kwaliteit en veiligheid leidend zijn</li></ul>`,
+ en:`<p>Administrative and logistics support in an international working environment where accuracy and following procedures come first.</p><ul><li>Processing and managing documentation according to set procedures</li><li>Planning and coordinating logistics processes</li><li>Liaising and collaborating daily with different departments</li><li>Working accurately and methodically in an environment where quality and safety are leading</li></ul>`,
+ de:`<p>Administrative und logistische Unterstützung in einem internationalen Arbeitsumfeld, in dem Genauigkeit und das Einhalten von Verfahren an erster Stelle stehen.</p><ul><li>Bearbeitung und Verwaltung von Dokumentation nach festen Verfahren</li><li>Planung und Koordination logistischer Prozesse</li><li>Tägliche Abstimmung und Zusammenarbeit mit verschiedenen Abteilungen</li><li>Genaues, strukturiertes Arbeiten in einem Umfeld, in dem Qualität und Sicherheit maßgeblich sind</li></ul>`,
+ zh:`<p>在国际化工作环境中提供行政与物流支持，严谨细致、遵守流程是首要要求。</p><ul><li>按既定流程处理和管理文件资料</li><li>计划和协调物流流程</li><li>每日与不同部门沟通协作</li><li>在质量与安全至上的环境中严谨、有条理地工作</li></ul>`},
+tl2_date:{nl:"Doorlopend",en:"Ongoing",de:"Laufend",zh:"持续经营"},
+tl2_title:{nl:"Eigenaar & oprichter",en:"Owner & founder",de:"Inhaber & Gründer",zh:"创始人兼负责人"},
+tl2_org:{nl:"MaasjeMurals · Maastricht",en:"MaasjeMurals · Maastricht",de:"MaasjeMurals · Maastricht",zh:"MaasjeMurals · 马斯特里赫特"},
+tl2_body:{
+ nl:`<p>Eigen onderneming in creatieve projecten en workshops voor scholen, bedrijven, gemeenten en particulieren. Ik ben verantwoordelijk voor het complete traject: van acquisitie tot oplevering.</p><ul><li>Acquisitie, klantcontact en het opstellen van offertes</li><li>Planning, administratie en projectmanagement in eigen beheer</li><li>Organisatie en begeleiding van workshops en evenementen voor groepen</li><li>Marketing en social media voor de eigen onderneming</li><li>Volledige verantwoordelijkheid voor budget, kwaliteit en deadlines per project</li></ul>`,
+ en:`<p>My own business in creative projects and workshops for schools, companies, municipalities and private clients. I'm responsible for the entire process: from acquisition to delivery.</p><ul><li>Acquisition, customer contact and drawing up quotations</li><li>Planning, administration and project management, all in-house</li><li>Organising and leading workshops and events for groups</li><li>Marketing and social media for the business</li><li>Full responsibility for budget, quality and deadlines on every project</li></ul>`,
+ de:`<p>Eigenes Unternehmen für kreative Projekte und Workshops für Schulen, Unternehmen, Gemeinden und Privatkunden. Ich bin für den gesamten Prozess verantwortlich: von der Akquise bis zur Lieferung.</p><ul><li>Akquise, Kundenkontakt und Erstellung von Angeboten</li><li>Planung, Verwaltung und Projektmanagement in Eigenregie</li><li>Organisation und Leitung von Workshops und Events für Gruppen</li><li>Marketing und Social Media für das eigene Unternehmen</li><li>Volle Verantwortung für Budget, Qualität und Deadlines pro Projekt</li></ul>`,
+ zh:`<p>自营创意项目与工作坊公司，服务对象包括学校、企业、市政机构和个人客户。我负责从获客到交付的全部流程。</p><ul><li>获客、客户联络及报价制定</li><li>独立完成计划、行政和项目管理</li><li>为团体组织并主持工作坊和活动</li><li>负责公司的市场营销和社交媒体</li><li>对每个项目的预算、质量和交期负全责</li></ul>`},
+tl3_date:{nl:"2023 — 2025",en:"2023 — 2025",de:"2023 — 2025",zh:"2023年 — 2025年"},
+tl3_title:{nl:"Klantcontact & werkvoorbereiding",en:"Customer contact & work preparation",de:"Kundenkontakt & Arbeitsvorbereitung",zh:"客户联络与生产准备"},
+tl3_org:{nl:"Deck's Reclame",en:"Deck's Reclame",de:"Deck's Reclame",zh:"Deck's Reclame广告公司"},
+tl3_body:{
+ nl:`<p>De schakel tussen klant en productie bij een reclamebedrijf: van eerste aanvraag tot opgeleverd product.</p><ul><li>Klantcontact, adviseren en offertes opstellen</li><li>Werk- en productievoorbereiding van drukwerk en signing</li><li>Bestanden ontwerpen en drukklaar maken in Adobe Illustrator en Photoshop</li><li>Planning van producties en ondersteuning bij montage</li><li>Websitebeheer, marketing en social media</li></ul>`,
+ en:`<p>The link between client and production at a signage and print company: from first enquiry to finished product.</p><ul><li>Customer contact, advising and preparing quotations</li><li>Work and production preparation for print and signage</li><li>Designing and preparing print-ready files in Adobe Illustrator and Photoshop</li><li>Planning production and supporting installation</li><li>Website management, marketing and social media</li></ul>`,
+ de:`<p>Die Schnittstelle zwischen Kunde und Produktion bei einem Werbetechnik-Unternehmen: von der ersten Anfrage bis zum fertigen Produkt.</p><ul><li>Kundenkontakt, Beratung und Angebotserstellung</li><li>Arbeits- und Produktionsvorbereitung von Druck und Beschilderung</li><li>Dateien in Adobe Illustrator und Photoshop gestalten und druckfertig aufbereiten</li><li>Produktionsplanung und Unterstützung bei der Montage</li><li>Website-Pflege, Marketing und Social Media</li></ul>`,
+ zh:`<p>在广告制作公司担任客户与生产之间的桥梁：从首次咨询到成品交付。</p><ul><li>客户联络、咨询建议及报价制定</li><li>印刷品与标识的生产准备工作</li><li>使用Adobe Illustrator和Photoshop设计并制作可印刷文件</li><li>生产排期及安装支持</li><li>网站维护、市场营销和社交媒体</li></ul>`},
+tl4_date:{nl:"2022",en:"2022",de:"2022",zh:"2022年"},
+tl4_title:{nl:"Marketing & Communicatie",en:"Marketing & Communication",de:"Marketing & Kommunikation",zh:"市场营销与沟通"},
+tl4_org:{nl:"Endurans Solar",en:"Endurans Solar",de:"Endurans Solar",zh:"Endurans Solar太阳能公司"},
+tl4_body:{
+ nl:`<p>Marketing, communicatie en projectondersteuning bij een internationale producent in de solar-industrie.</p><ul><li>Websitebeheer en contentcreatie</li><li>Vertalingen en communicatie voor internationale doelgroepen</li><li>Ondersteuning van de Chinese markt, onder andere via WeChat</li><li>Samenwerking met internationale collega's en partners</li></ul>`,
+ en:`<p>Marketing, communication and project support at an international manufacturer in the solar industry.</p><ul><li>Website management and content creation</li><li>Translations and communication for international audiences</li><li>Supporting the Chinese market, including via WeChat</li><li>Working with international colleagues and partners</li></ul>`,
+ de:`<p>Marketing, Kommunikation und Projektunterstützung bei einem internationalen Hersteller in der Solarbranche.</p><ul><li>Website-Pflege und Content-Erstellung</li><li>Übersetzungen und Kommunikation für internationale Zielgruppen</li><li>Betreuung des chinesischen Marktes, u. a. über WeChat</li><li>Zusammenarbeit mit internationalen Kollegen und Partnern</li></ul>`,
+ zh:`<p>在太阳能行业的国际制造企业从事市场营销、沟通和项目支持工作。</p><ul><li>网站维护与内容创作</li><li>面向国际受众的翻译与沟通</li><li>支持中国市场业务（包括微信运营）</li><li>与国际同事和合作伙伴协作</li></ul>`},
+tl5_date:{nl:"2022",en:"2022",de:"2022",zh:"2022年"},
+tl5_title:{nl:"BA International Communication",en:"BA International Communication",de:"BA International Communication",zh:"国际传播学士"},
+tl5_org:{nl:"Zuyd University",en:"Zuyd University of Applied Sciences",de:"Zuyd University of Applied Sciences",zh:"荷兰Zuyd应用科学大学"},
+tl5_body:{
+ nl:`<p>Bachelor gericht op internationale communicatie, marketing, Chinees, interculturele samenwerking en projectmanagement.</p>`,
+ en:`<p>Bachelor's degree focused on international communication, marketing, Chinese, intercultural collaboration and project management.</p>`,
+ de:`<p>Bachelorstudium mit Schwerpunkt internationale Kommunikation, Marketing, Chinesisch, interkulturelle Zusammenarbeit und Projektmanagement.</p>`,
+ zh:`<p>本科学位，主修国际传播、市场营销、中文、跨文化协作与项目管理。</p>`},
+tl6_date:{nl:"2014 · 7 maanden",en:"2014 · 7 months",de:"2014 · 7 Monate",zh:"2014年 · 7个月"},
+tl6_title:{nl:"English Teacher",en:"English Teacher",de:"English Teacher",zh:"英语教师"},
+tl6_org:{nl:"Ke'Er Kindergarten · Beijing, China",en:"Ke'Er Kindergarten · Beijing, China",de:"Ke'Er Kindergarten · Peking, China",zh:"北京可儿幼儿园 · 中国北京"},
+tl6_body:{
+ nl:`<p>Zeven maanden zelfstandig gewoond en gewerkt in Beijing — een ervaring die mijn interculturele communicatievaardigheden blijvend heeft gevormd.</p><ul><li>Engelse les gegeven aan kleuters en zelfstandig lessen voorbereid</li><li>Dagelijks samengewerkt en gecommuniceerd met Chinese collega's</li><li>Volledig zelfstandig gefunctioneerd in een internationale omgeving</li></ul>`,
+ en:`<p>Seven months living and working independently in Beijing — an experience that permanently shaped my intercultural communication skills.</p><ul><li>Taught English to kindergarten children and prepared lessons independently</li><li>Worked and communicated with Chinese colleagues every day</li><li>Functioned fully independently in an international environment</li></ul>`,
+ de:`<p>Sieben Monate selbstständig in Peking gelebt und gearbeitet – eine Erfahrung, die meine interkulturellen Kommunikationsfähigkeiten nachhaltig geprägt hat.</p><ul><li>Englischunterricht für Kindergartenkinder gegeben und Unterricht selbstständig vorbereitet</li><li>Täglich mit chinesischen Kollegen zusammengearbeitet und kommuniziert</li><li>Völlig selbstständig in einem internationalen Umfeld agiert</li></ul>`,
+ zh:`<p>在北京独立生活和工作七个月——这段经历深刻塑造了我的跨文化沟通能力。</p><ul><li>为幼儿园儿童教授英语并独立备课</li><li>每天与中国同事协作沟通</li><li>在国际环境中完全独立地工作和生活</li></ul>`},
+tl7_date:{nl:"2013",en:"2013",de:"2013",zh:"2013年"},
+tl7_title:{nl:"Stand, Winkel & Decorbouw",en:"Stand, Retail & Set Construction",de:"Messe-, Laden- & Dekorbau",zh:"展台、店铺与布景搭建"},
+tl7_org:{nl:"SintLucas",en:"SintLucas",de:"SintLucas",zh:"SintLucas职业学院"},
+tl7_body:{
+ nl:`<p>Ontwerp, vormgeving, presentatie en projectuitvoering.</p>`,
+ en:`<p>Design, styling, presentation and project execution.</p>`,
+ de:`<p>Entwurf, Gestaltung, Präsentation und Projektumsetzung.</p>`,
+ zh:`<p>设计、造型、展示与项目执行。</p>`},
+prest_label:{nl:"// Belangrijkste prestaties",en:"// Key achievements",de:"// Wichtigste Erfolge",zh:"// 主要成就"},
+prest_h2:{
+ nl:"Wat ik heb <mark>bereikt</mark>",
+ en:"What I've <mark>achieved</mark>",
+ de:"Was ich <mark>erreicht</mark> habe",
+ zh:"我的<mark>成就</mark>"},
+p1_thumb:{nl:"Onder-<br>nemer",en:"Entre-<br>preneur",de:"Unter-<br>nehmer",zh:"创业者"},
+p1_title:{nl:"Eigen onderneming opgebouwd",en:"Built my own business",de:"Eigenes Unternehmen aufgebaut",zh:"白手起家创办公司"},
+p1_text:{
+ nl:"MaasjeMurals van de grond af opgezet: workshops georganiseerd voor scholen, bedrijven en gemeenten, en projecten zelfstandig begeleid van offerte tot oplevering.",
+ en:"Built MaasjeMurals from the ground up: organised workshops for schools, companies and municipalities, and managed projects independently from quotation to delivery.",
+ de:"MaasjeMurals von Grund auf aufgebaut: Workshops für Schulen, Unternehmen und Gemeinden organisiert und Projekte selbstständig vom Angebot bis zur Lieferung betreut.",
+ zh:"从零创办MaasjeMurals：为学校、企业和市政机构组织工作坊，并独立管理项目，从报价到交付全程负责。"},
+p1_tags:{
+ nl:"<span>Ondernemerschap</span><span>Projectmanagement</span><span>Acquisitie</span>",
+ en:"<span>Entrepreneurship</span><span>Project management</span><span>Acquisition</span>",
+ de:"<span>Unternehmertum</span><span>Projektmanagement</span><span>Akquise</span>",
+ zh:"<span>创业精神</span><span>项目管理</span><span>客户开发</span>"},
+p2_thumb:{nl:"Inter-<br>nationaal",en:"Inter-<br>national",de:"Inter-<br>national",zh:"国际化"},
+p2_title:{nl:"Internationale ervaring",en:"International experience",de:"Internationale Erfahrung",zh:"国际经验"},
+p2_text:{
+ nl:"Bachelor International Communication afgerond, zeven maanden gewerkt in Beijing en Mandarijn Chinees op HSK4-niveau. Interculturele communicatie in de praktijk.",
+ en:"Completed a Bachelor in International Communication, worked in Beijing for seven months and speak Mandarin Chinese at HSK4 level. Intercultural communication in practice.",
+ de:"Bachelor International Communication abgeschlossen, sieben Monate in Peking gearbeitet und Mandarin auf HSK4-Niveau. Interkulturelle Kommunikation in der Praxis.",
+ zh:"完成国际传播本科学位，在北京工作七个月，中文水平达HSK4。跨文化沟通的实践者。"},
+p2_tags:{
+ nl:"<span>China</span><span>HSK4 Chinees</span><span>Interculturele communicatie</span>",
+ en:"<span>China</span><span>HSK4 Chinese</span><span>Intercultural communication</span>",
+ de:"<span>China</span><span>HSK4 Chinesisch</span><span>Interkulturelle Kommunikation</span>",
+ zh:"<span>中国</span><span>HSK4中文</span><span>跨文化沟通</span>"},
+p3_thumb:{nl:"Organi-<br>sator",en:"Orga-<br>niser",de:"Organi-<br>sator",zh:"组织者"},
+p3_title:{nl:"Bewezen in administratie & logistiek",en:"Proven in administration & logistics",de:"Bewährt in Administration & Logistik",zh:"行政与物流实绩"},
+p3_text:{
+ nl:"Administratieve en logistieke ervaring binnen SABIC, werkvoorbereiding en planning bij Deck's Reclame: gestructureerd werken volgens procedures, in elk team.",
+ en:"Administrative and logistics experience at SABIC, work preparation and planning at Deck's Reclame: structured, procedure-driven work, in any team.",
+ de:"Administrative und logistische Erfahrung bei SABIC, Arbeitsvorbereitung und Planung bei Deck's Reclame: strukturiertes Arbeiten nach Verfahren, in jedem Team.",
+ zh:"在SABIC积累行政与物流经验，在Deck's Reclame负责生产准备与排期：无论在哪个团队，都能按流程有条理地工作。"},
+p3_tags:{
+ nl:"<span>Administratie</span><span>Logistiek</span><span>Planning</span>",
+ en:"<span>Administration</span><span>Logistics</span><span>Planning</span>",
+ de:"<span>Administration</span><span>Logistik</span><span>Planung</span>",
+ zh:"<span>行政管理</span><span>物流</span><span>计划安排</span>"},
+contact_label:{nl:"// Contact",en:"// Contact",de:"// Kontakt",zh:"// 联系方式"},
+big_cta:{
+ nl:`Zullen we<br>kennismaken?<br><a href="mailto:jeroenvanuum@gmail.com">jeroenvanuum@gmail.com</a>`,
+ en:`Shall we<br>meet?<br><a href="mailto:jeroenvanuum@gmail.com">jeroenvanuum@gmail.com</a>`,
+ de:`Lernen wir uns<br>kennen?<br><a href="mailto:jeroenvanuum@gmail.com">jeroenvanuum@gmail.com</a>`,
+ zh:`期待与您<br>相识<br><a href="mailto:jeroenvanuum@gmail.com">jeroenvanuum@gmail.com</a>`},
+btn_call:{nl:"Bel 06-30 40 34 24",en:"Call +31 6 30 40 34 24",de:"Anrufen: +31 6 30 40 34 24",zh:"致电 +31 6 30 40 34 24"},
+btn_mail:{nl:"Stuur een mail",en:"Send an email",de:"E-Mail senden",zh:"发送邮件"},
+footer_top:{nl:"↑ Terug naar boven",en:"↑ Back to top",de:"↑ Nach oben",zh:"↑ 返回顶部"},
+photo_alt:{nl:"Portretfoto van Jeroen van Uum",en:"Portrait photo of Jeroen van Uum",de:"Porträtfoto von Jeroen van Uum",zh:"Jeroen van Uum的肖像照"}
+};
+
+let currentLang = 'nl';
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.title = T.doc_title[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if(T[k] && T[k][lang] !== undefined) el.textContent = T[k][lang];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.dataset.i18nHtml;
+    if(T[k] && T[k][lang] !== undefined) el.innerHTML = T[k][lang];
+  });
+  const photo = document.querySelector('.shape.photo img');
+  if(photo) photo.alt = T.photo_alt[lang];
+  /* open tijdlijnkaarten sluiten zodat hoogtes kloppen */
+  document.querySelectorAll('.tl-card.open').forEach(card => {
+    card.classList.remove('open');
+    card.querySelector('.tl-body').style.maxHeight = '0px';
+    card.querySelector('.tl-head').setAttribute('aria-expanded','false');
+  });
+  document.querySelectorAll('.lang-switch button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  updateTimeline();
+}
+document.querySelectorAll('.lang-switch button').forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+/* ================= interactie ================= */
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* scroll progress bar */
+const progress = document.getElementById('progress');
+function updateProgress(){
+  const h = document.documentElement;
+  const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = pct + '%';
+}
+document.addEventListener('scroll', updateProgress, {passive:true});
+updateProgress();
+
+/* reveal on scroll */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:.18});
+document.querySelectorAll('.reveal, .tl-item').forEach(el => io.observe(el));
+
+/* hero 3D parallax (muis + scroll) */
+const shapes = document.querySelectorAll('.shape');
+if(!prefersReduced){
+  let mx = 0, my = 0, tx = 0, ty = 0;
+  window.addEventListener('mousemove', e => {
+    mx = (e.clientX / window.innerWidth - .5) * 2;
+    my = (e.clientY / window.innerHeight - .5) * 2;
+  }, {passive:true});
+  function animateShapes(){
+    tx += (mx - tx) * .06;
+    ty += (my - ty) * .06;
+    const sy = window.scrollY;
+    shapes.forEach(s => {
+      const d = parseFloat(s.dataset.depth || .3);
+      const x = tx * 42 * d;
+      const y = ty * 30 * d - sy * d * .25;
+      const r = tx * 8 * d;
+      s.style.transform = `translate3d(${x}px, ${y}px, ${d * 60}px) rotate(${r}deg)`;
+    });
+    requestAnimationFrame(animateShapes);
+  }
+  animateShapes();
+}
+
+/* tijdlijn: lijn tekent mee met scroll */
+const timeline = document.getElementById('timeline');
+const fill = document.getElementById('timelineFill');
+function updateTimeline(){
+  if(!timeline) return;
+  const rect = timeline.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = rect.height;
+  const passed = Math.min(Math.max(vh * .75 - rect.top, 0), total);
+  fill.style.height = (passed / total * 100) + '%';
+}
+document.addEventListener('scroll', updateTimeline, {passive:true});
+window.addEventListener('resize', updateTimeline);
+
+/* tijdlijn: uitklapbare kaarten (event delegation, werkt na taalwissel) */
+document.getElementById('timeline').addEventListener('click', e => {
+  const btn = e.target.closest('.tl-head');
+  if(!btn) return;
+  const card = btn.closest('.tl-card');
+  const body = card.querySelector('.tl-body');
+  const open = card.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+  body.style.maxHeight = open ? body.scrollHeight + 'px' : '0px';
+});
+
+/* kaarten: 3D tilt op hover */
+if(!prefersReduced){
+  document.querySelectorAll('[data-tilt]').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5;
+      const y = (e.clientY - r.top) / r.height - .5;
+      card.style.transform = `perspective(700px) rotateX(${ -y * 8 }deg) rotateY(${ x * 8 }deg) translateY(-4px)`;
+      card.style.boxShadow = '10px 12px 0 var(--ink)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.boxShadow = '';
+    });
+  });
+}
+
+/* initialiseren in het Nederlands */
+setLang('nl');
+updateTimeline();
+</script>
+</body>
+</html>
